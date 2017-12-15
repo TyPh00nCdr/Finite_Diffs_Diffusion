@@ -1,0 +1,4 @@
+Modelldiskretisierung= 10  
+Zeitschrittlaengen=10
+Raumdiskretisierung=1
+Modellzeit=100
