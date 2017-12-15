@@ -39,7 +39,7 @@ Parameter &IO::read() {
 }
 
 bool IO::write(const std::vector<double> &data) {
-    std::ofstream file("./OUTPUT.txt", std::ios::trunc);
+    std::ofstream file("./OUTPUT.csv", std::ios::trunc);
     if (file.is_open()) {
         for (int i = 0; i < data.size(); ++i) {
             file << "C(" << (i + 1) << ")," << data[i] << std::endl;
@@ -47,7 +47,7 @@ bool IO::write(const std::vector<double> &data) {
         file.close();
         return true;
     } else {
-        std::cerr << "Unable to write OUTPUT.txt!" << std::endl << std::endl;
+        std::cerr << "Unable to write OUTPUT.csv!" << std::endl << std::endl;
         return false;
     }
 }
@@ -57,7 +57,7 @@ double IO::read_val(const std::vector<std::string> &vector, const std::string &v
         return str.find(val_name) != std::string::npos;
     }))};
 
-    std::string val_string = vector[index].substr(vector[index].find("=") + 1, vector[index].size());
+    std::string val_string = vector[index].substr(vector[index].find('=') + 1, vector[index].size());
 
     return std::stod(val_string);
 }

@@ -15,6 +15,6 @@ int main() {
 
     // final message
     std::cout << "Calculations were successful!" << std::endl;
-    if (write_success) std::cout << "Results written to OUTPUT.txt" << std::endl;
+    if (write_success) std::cout << "Results written to OUTPUT.csv" << std::endl;
     return EXIT_SUCCESS;
 }
